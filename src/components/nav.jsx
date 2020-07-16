@@ -1,8 +1,11 @@
 function Link({ to, isActive, children }) {
     return (
-        <a class={`block p-2 ${isActive ? 'bg-gray-700 text-white' : ''}`} href={to}>
-            {children}
-        </a>
+        <li class="px-2 md:px-4">
+            <a class="text-purple-600 font-semibold hover:text-purple-500 ${isActive ? 'bg-gray-700 text-white' : ''}" href={to}>
+                {children}
+            </a>
+
+        </li>
     );
 }
 
@@ -14,27 +17,20 @@ export default function* () {
         active = this.$route.split('/')[1] || 'home';
         yield (
             <nav class="px-2">
-                <ul class="flex">
-                    <li>
-                        <Link to="/" isActive={isActive('home')}>
-                            home
+                <ul class="inline-flex items-center">
+
+                    <Link to="/" isActive={isActive('home')}>
+                        home
                         </Link>
-                    </li>
-                    <li>
-                        <Link to="/about" isActive={isActive('about')}>
-                            about
+                    <Link to="/about" isActive={isActive('about')}>
+                        about
                         </Link>
-                    </li>
-                    <li>
-                        <Link to="/blog" isActive={isActive('blog')}>
-                            blog
+                    <Link to="/blog" isActive={isActive('blog')}>
+                        blog
                         </Link>
-                    </li>
-                    <li>
-                        <Link to="/imprint" isActive={isActive('imprint')}>
-                            Imprint
+                    <Link to="/imprint" isActive={isActive('imprint')}>
+                        Imprint
                         </Link>
-                    </li>
                 </ul>
             </nav>
         );

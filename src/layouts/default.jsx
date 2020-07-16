@@ -1,10 +1,14 @@
-import Nav from '../components/nav';
+import Header from "../components/header";
+import Footer from '../components/footer';
 
 export default function ({ children }) {
     return (
-        <div class="h-screen flex flex-col">
-            <Nav />
-            <div class="flex-grow p-4">{children}</div>
-        </div>
+        <div class="max-w-screen-xl mx-auto">
+            <Header />
+            <main class="mt-10">
+                {children}
+            </main>
+            <Footer />
+        </div >
     );
 }
