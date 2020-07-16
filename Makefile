@@ -1,5 +1,5 @@
 build:
-	npm build
+	npm run-script build:dev
 
 server:
 	npm run-script start:dev

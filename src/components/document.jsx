@@ -9,8 +9,8 @@ export default function ({ children }) {
                 <title>{Site.title}</title>
                 <link rel="stylesheet" href="./client.css"></link>
             </head>
-            <body>
-                <div id="app">{children}</div>
+            <body class="h-screen bg-gray-150">
+                <div id="app" class="max-w-screen-xl mx-auto">{children}</div>
                 <script src="./client.js" type="module"></script>
             </body>
         </html>
