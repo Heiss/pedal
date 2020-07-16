@@ -10,7 +10,6 @@ const router = navaid();
 Context.prototype.$isClient = true;
 Context.prototype.$router = router;
 Context.prototype.$fetch = window.fetch.bind(window);
-Context.prototype.$dark = false;
 
 routes.forEach(([route, module]) =>
     router.on(route, async (params) => {
