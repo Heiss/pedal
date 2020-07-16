@@ -1,6 +1,6 @@
 var site = {
     "title": "Tech Blog Title",
-    "navbarTitle": "Navbar",
+    "navbarTitle": "Tech Blog",
     "blog": {
         "posts": 'https://jsonplaceholder.typicode.com/posts',
         "post": (id) => `https://jsonplaceholder.typicode.com/posts/${id}`
