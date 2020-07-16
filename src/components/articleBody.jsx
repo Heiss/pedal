@@ -2,7 +2,7 @@ import Profile from "../components/profile";
 import { Raw, Fragment } from '@bikeshaving/crank';
 
 
-export default function ({title, body, image="", category="Misc"}) {
+export default function ({ title, body, image = "", category = "Misc" }) {
     return (
         <Fragment>
             <div class="px-4 lg:px-0">

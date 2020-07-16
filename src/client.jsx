@@ -16,8 +16,6 @@ routes.forEach(([route, module]) =>
         Context.prototype.$route = route;
         Context.prototype.$params = params;
 
-        console.log(params)
-
         const { default: Route } = await module();
 
         renderer.render(

@@ -1,8 +1,9 @@
 import LoadingIndicator from '../components/LoadingIndicator';
 import ListEntry from "../components/listEntry";
+import Site from "../site"
 
 async function Blog() {
-    const res = await this.$fetch('https://jsonplaceholder.typicode.com/posts');
+    const res = await this.$fetch(Site.blog.posts);
     const posts = await res.json();
 
     return (

@@ -1,10 +1,12 @@
+import Site from "../site"
+
 export default function ({ children }) {
     return (
         <html>
             <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Pedal</title>
+                <title>{Site.title}</title>
                 <link rel="stylesheet" href="./client.css"></link>
             </head>
             <body>
