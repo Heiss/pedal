@@ -1,10 +1,9 @@
-async function LoadingIndicator() {
-    return <div>Fetching posts...</div>;
-}
+import LoadingIndicator from '../components/LoadingIndicator';
 
 async function Blog() {
     const res = await this.$fetch('https://jsonplaceholder.typicode.com/posts');
     const posts = await res.json();
+
     return (
         <ul>
             {posts.map((post) => (

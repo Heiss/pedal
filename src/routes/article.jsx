@@ -1,9 +1,7 @@
 import { Raw } from '@bikeshaving/crank';
 import { Fragment } from '@bikeshaving/crank';
+import LoadingIndicator from '../components/LoadingIndicator';
 
-async function LoadingIndicator() {
-    return <div>Fetching article...</div>;
-}
 
 async function Article({ id }) {
     const res = await this.$fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
