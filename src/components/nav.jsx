@@ -1,3 +1,5 @@
+import routes from "../routes";
+
 function Link({ to, isActive, children }) {
     return (
         <li class="px-2 md:px-4">
@@ -15,22 +17,17 @@ export default function* () {
 
     for (const _ of this) {
         active = this.$route.split('/')[1] || 'home';
+
         yield (
             <nav class="px-2">
                 <ul class="inline-flex items-center">
-
-                    <Link to="/" isActive={isActive('home')}>
-                        home
-                        </Link>
-                    <Link to="/about" isActive={isActive('about')}>
-                        about
-                        </Link>
-                    <Link to="/blog" isActive={isActive('blog')}>
-                        blog
-                        </Link>
-                    <Link to="/imprint" isActive={isActive('imprint')}>
-                        Imprint
-                        </Link>
+                    {
+                        routes
+                            .filter(([route, module, title]) => title !== undefined)
+                            .map(([route, module, title]) => (
+                                <Link to={route} isActive={isActive(route.split('/')[1])}>{title}</Link>
+                            ))
+                    }
                 </ul>
             </nav>
         );
