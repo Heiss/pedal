@@ -2,7 +2,7 @@ import Site from "../site"
 
 export default function ({ children }) {
     return (
-        <html>
+        <html style="overflow-y: scroll;">
             <head>
                 <meta charset="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -1,10 +1,9 @@
-import { Fragment } from '@bikeshaving/crank';
+import Article from "../components/articleBody"
 
-export default async function () {
+export default function () {
     return (
-        <Fragment>
-            <h1>Contact</h1>
-            <p>This is the 'contact' page. There's not much here.</p>
-        </Fragment>
+        <Article title="Contact">
+            This is the 'contact' page. There's not much here.
+        </Article>
     );
 }
