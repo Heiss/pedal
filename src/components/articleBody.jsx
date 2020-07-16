@@ -9,7 +9,7 @@ export default function ({ title = undefined, body, image = undefined, category 
         <Fragment>
             {
                 showTitleHead ?
-                    <div class="px-4 lg:px-0">asd
+                    <div class="px-4 lg:px-0">
                         {title !== undefined ? <h2 class="text-4xl font-semibold text-gray-800 leading-tight">{title}</h2> : ""}
                         {category !== undefined ? <a href="#" class="py-2 text-green-700 inline-flex items-center justify-center mb-2">{category}</a> : ""}
                         {image !== undefined ? <img src="{image}" class="w-full object-cover lg:rounded" style="height: 28em;" /> : ""}
