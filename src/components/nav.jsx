@@ -30,6 +30,11 @@ export default function* () {
                             blog
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/imprint" isActive={isActive('imprint')}>
+                            Imprint
+                        </Link>
+                    </li>
                 </ul>
             </nav>
         );

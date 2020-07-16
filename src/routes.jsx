@@ -3,4 +3,5 @@ export default [
     ['/about', () => import('./routes/about')],
     ['/blog', () => import('./routes/blog')],
     ['/blog/:id', () => import('./routes/article')],
+    ['/imprint', () => import('./routes/imprint')],
 ];
