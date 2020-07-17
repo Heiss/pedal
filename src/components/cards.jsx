@@ -1,13 +1,14 @@
 import { Fragment } from "@bikeshaving/crank"
+import Site from "../site";
 
-function Card({ title, children, author, publish_date, photo, author_photo }) {
+function Card({ title, children, author, publish_date, image, author_photo, href }) {
     return (
         <a class="block rounded w-full lg:flex mb-10"
-            href="./blog-single-1.html"
+            href={href}
         >
             <div
                 class="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
-                style={`background-image: url('${photo}')`}
+                style={`background-image: url('${image}')`}
                 title="deit is very important"
             >
             </div>
@@ -33,21 +34,17 @@ function Card({ title, children, author, publish_date, photo, author_photo }) {
     )
 }
 
-export default function () {
+export default async function () {
+    const res = await this.$fetch(Site.blog.posts);
+    const posts = await res.json();
+
     return (
         <Fragment>
-            <Card title="Aliquam venenatis nisl id purus rhoncus, in efficitur sem hendrerit." author="eduard franz" publish_date="14 Aug" author_photo="https://randomuser.me/api/portraits/men/86.jpg" photo="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
-                Duis euismod est quis lacus elementum, eu laoreet dolor consectetur.
-                Pellentesque sed neque vel tellus lacinia elementum. Proin consequat ullamcorper eleifend.
-            </Card>
-            <Card title="Aliquam venenatis nisl id purus rhoncus, in efficitur sem hendrerit." author="eduard franz" publish_date="14 Aug" author_photo="https://randomuser.me/api/portraits/men/86.jpg" photo="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
-                Duis euismod est quis lacus elementum, eu laoreet dolor consectetur.
-                Pellentesque sed neque vel tellus lacinia elementum. Proin consequat ullamcorper eleifend.
-            </Card>
-            <Card title="Aliquam venenatis nisl id purus rhoncus, in efficitur sem hendrerit." author="eduard franz" publish_date="14 Aug" author_photo="https://randomuser.me/api/portraits/men/86.jpg" photo="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
-                Duis euismod est quis lacus elementum, eu laoreet dolor consectetur.
-                Pellentesque sed neque vel tellus lacinia elementum. Proin consequat ullamcorper eleifend.
-            </Card>
+            {posts.slice(0, 3).map((post) => (
+                <Card title={post.title} author={post.author} title={post.title} image={post.image} category={post.category} publish_date={post.pub_date} author_photo={`https://randomuser.me/api/portraits/men/${post.id}.jpg`} image="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" href={`/blog/${post.id}`}>
+                    {post.body}
+                </Card>
+            ))}
         </Fragment>
     )
 }

@@ -1,5 +1,5 @@
 import LoadingIndicator from '../components/LoadingIndicator';
-import Body from "../components/articleBody";
+import Body from "../components/article";
 import Site from "../site"
 
 async function Article({ id }) {
