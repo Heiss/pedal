@@ -1,4 +1,4 @@
-import Nav from './nav';
+import Nav from '../components/nav';
 import Site from "../site"
 
 export default function () {
