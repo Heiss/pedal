@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "author": {
+            "familyName": "Heiss",
+            "name": "Peter"
+        },
+        "image": {
+            "sm": "",
+            "lg": ""
+        },
+        "description": "",
+        "position": "Software-Engineer"
+    }
+]
