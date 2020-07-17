@@ -5,6 +5,7 @@ import Site from "../site"
 async function Article({ id }) {
     const res = await this.$fetch(Site.blog.post(id));
     const post = await res.json();
+    
     return (
         <Body title={post.title} body={post.body} image={post.image} category={post.category} showProfile={true} />
     );

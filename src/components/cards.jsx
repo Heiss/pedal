@@ -1,3 +1,5 @@
+import { Fragment } from "@bikeshaving/crank"
+
 function Card({ title, children, author, publish_date, photo, author_photo }) {
     return (
         <a class="block rounded w-full lg:flex mb-10"
@@ -33,7 +35,7 @@ function Card({ title, children, author, publish_date, photo, author_photo }) {
 
 export default function () {
     return (
-        <div class="w-full lg:w-2/3">
+        <Fragment>
             <Card title="Aliquam venenatis nisl id purus rhoncus, in efficitur sem hendrerit." author="eduard franz" publish_date="14 Aug" author_photo="https://randomuser.me/api/portraits/men/86.jpg" photo="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80">
                 Duis euismod est quis lacus elementum, eu laoreet dolor consectetur.
                 Pellentesque sed neque vel tellus lacinia elementum. Proin consequat ullamcorper eleifend.
@@ -46,6 +48,6 @@ export default function () {
                 Duis euismod est quis lacus elementum, eu laoreet dolor consectetur.
                 Pellentesque sed neque vel tellus lacinia elementum. Proin consequat ullamcorper eleifend.
             </Card>
-        </div>
+        </Fragment>
     )
 }
