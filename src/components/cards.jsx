@@ -44,7 +44,7 @@ export default async function () {
 
     return (
         <Fragment>
-            {posts.slice(0, 3).map((post) => (
+            {posts.slice(2, 5).map((post) => (
                 <Card title={post.title} authorId={post.author} title={post.title} image={post.image} category={post.category} publish_date={post.pub_date} href={`/blog/${post.id}`}>
                     {post.headline}
                 </Card>
