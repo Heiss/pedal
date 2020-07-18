@@ -37,7 +37,7 @@ async function ShowcaseRight({ post }) {
     const author = authors[post.author];
 
     return (
-        <a class="w-full md:w-1/3 relative rounded"
+        <a class="w-full md:w-1/3 relative rounded inline-block opacity-75 md:opacity-100"
             style="height: 24em;"
             href={`/blog/${post.id}`}
         >
