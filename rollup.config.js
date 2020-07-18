@@ -6,6 +6,8 @@ import postcss from 'rollup-plugin-postcss';
 import tailwindcss from 'tailwindcss';
 import cssnano from 'cssnano';
 import { terser } from 'rollup-plugin-terser';
+import copy from "rollup-plugin-copy-assets";
+
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -60,14 +62,19 @@ export default [
             },
         ],
         plugins: [
+            copy({
+                assets: [
+                    "src/assets",
+                ]
+            }),
             commonjs(),
             postcss({
                 plugins: [
                     tailwindcss,
                     production &&
-                        cssnano({
-                            preset: 'default',
-                        }),
+                    cssnano({
+                        preset: 'default',
+                    }),
                 ],
                 extract: true,
             }),

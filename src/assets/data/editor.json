@@ -1,0 +1,15 @@
+[
+    {
+        "id": 0,
+        "author": {
+            "familyName": "Heiss",
+            "name": "Peter"
+        },
+        "image": {
+            "sm": "https://randomuser.me/api/portraits/men/1.jpg",
+            "lg": "https://randomuser.me/api/portraits/men/1.jpg"
+        },
+        "description": "Netter Text über mich",
+        "position": "Software-Engineer"
+    }
+]

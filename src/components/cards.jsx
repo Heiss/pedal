@@ -1,10 +1,10 @@
 import { Fragment } from "@bikeshaving/crank"
 import Site from "../site";
 
-function Card({ title, children, authorId, publish_date, image, href }) {
-    const res = await this.$fetch(Site.blog.author.get(authorId));
-    const author = await res.json();
-
+async function Card({ title, children, authorId, publish_date, image, href }) {
+    const res = await this.$fetch(Site.author.all);
+    const authors = await res.json();
+    const author = authors[authorId];
 
     return (
         <a class="block rounded w-full lg:flex mb-10"
@@ -45,8 +45,8 @@ export default async function () {
     return (
         <Fragment>
             {posts.slice(0, 3).map((post) => (
-                <Card title={post.title} author={post.author} title={post.title} image={post.image} category={post.category} publish_date={post.pub_date} author_photo={`https://randomuser.me/api/portraits/men/${post.userId}.jpg`} image="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80" href={`/blog/${post.id}`}>
-                    {post.body}
+                <Card title={post.title} authorId={post.author} title={post.title} image={post.image} category={post.category} publish_date={post.pub_date} href={`/blog/${post.id}`}>
+                    {post.headline}
                 </Card>
             ))}
         </Fragment>

@@ -1,6 +1,9 @@
-export default function ({ id = 1 }) {
-    const res = await this.$fetch(Site.blog.author.get(id));
-    const author = await res.json();
+import Site from "../site";
+
+export default async function ({ id = 0 }) {
+    const res = await this.$fetch(Site.author.all);
+    const authors = await res.json();
+    const author = authors[id];
 
     return (
         <div class="w-full lg:w-1/4 m-auto mt-12 max-w-screen-sm">
