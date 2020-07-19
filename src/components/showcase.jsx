@@ -19,7 +19,7 @@ async function ShowcaseLeft({ post }) {
                 <span class="px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center mb-2">{post.category}</span>
                 <h2 class="text-4xl font-semibold text-gray-100 leading-tight">{post.title}</h2>
                 <div class="flex mt-3">
-                    <img src={author.image.lg}
+                    <img src={author.image}
                         class="h-10 w-10 rounded-full mr-2 object-cover" />
                     <div>
                         <p class="font-semibold text-gray-200 text-sm"> {author.author.name} {author.author.familyName} </p>
@@ -49,7 +49,7 @@ async function ShowcaseRight({ post }) {
                 <h2 class="text-3xl font-semibold text-gray-100 leading-tight">{post.title}</h2>
                 <div class="flex mt-3">
                     <img
-                        src={author.image.lg}
+                        src={author.image}
                         class="h-10 w-10 rounded-full mr-2 object-cover" />
                     <div>
                         <p class="font-semibold text-gray-200 text-sm"> {author.author.name} {author.author.familyName} </p>

@@ -9,7 +9,9 @@ async function Article({ id }) {
 
 
     return (
-        <Body title={post.title} body={post.body} image={post.image} category={post.category} showProfile={true} />
+        <Body title={post.title} image={post.image} category={post.category} showProfile={true}>
+            {post.body}
+        </Body>
     );
 }
 
