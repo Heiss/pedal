@@ -5,7 +5,13 @@ server:
 	npm run-script start:dev
 
 install:
+	chmod +x parser.py
+	sudo apt install pandoc
+	pip install -r requirements.txt
 	npm install
+
+parse:
+	./parser.py
 
 install-dev: install l10n-install
 
