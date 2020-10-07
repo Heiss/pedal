@@ -26,7 +26,7 @@ async function Card({ title, children, authorId, publish_date, image, href }) {
                     </p>
                 </div>
                 <div class="flex mt-3">
-                    <img src={author.image}
+                    <img src={author.image.sm}
                         class="h-10 w-10 rounded-full mr-2 object-cover" />
                     <div>
                         <p class="font-semibold text-gray-700 text-sm capitalize"> {author.author.name} {author.author.familyName} </p>
